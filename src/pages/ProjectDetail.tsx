@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Github, ExternalLink, Calendar, User, Code, Database, Globe, Server } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Calendar, Code, Database, Globe, Server } from "lucide-react";
 
 const ProjectDetail = () => {
   const { id } = useParams();

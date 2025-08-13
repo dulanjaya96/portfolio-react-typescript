@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Github, Linkedin, Instagram, ExternalLink, Code, Database, Globe, Server, Smartphone, Cpu } from "lucide-react";
+import { Mail, Github, Linkedin, Instagram, ExternalLink, Code, Database, Globe, Server, Cpu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -131,7 +131,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
+            {skills.map((skill) => (
               <Card key={skill.name} className="hover:shadow-lg transition-shadow hover-scale">
                 <CardContent className="p-6 text-center">
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-full ${skill.color} flex items-center justify-center`}>
