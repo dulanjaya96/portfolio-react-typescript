@@ -114,9 +114,7 @@ const Index = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary rounded-full flex items-center justify-center">
-                  <Code className="h-8 w-8 text-primary-foreground" />
-                </div>
+                
               </div>
             </div>
           </div>
