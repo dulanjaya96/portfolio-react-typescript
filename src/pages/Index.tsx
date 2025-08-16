@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Github, Linkedin, Instagram, ExternalLink, Code, Database, Globe, Server, Cpu, Menu, X } from "lucide-react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Index = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const skills = [
@@ -249,11 +249,8 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={() => {
-                      // For demo purposes - replace with your navigation logic
-                      console.log(`Navigate to project ${project.id}`);
-                    }}
-                  >
+                    onClick={() => navigate(`/project/${project.id}`)}
+                  >                  
                     View Details <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
