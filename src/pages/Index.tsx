@@ -14,7 +14,7 @@ const Index = () => {
     { name: "Django", icon: Server, color: "bg-green-600" },
     { name: "MongoDB", icon: Database, color: "bg-green-500" },
     { name: "Node.js", icon: Cpu, color: "bg-green-400" },
-    { name: "HTML/CSS", icon: Globe, color: "bg-orange-500" },
+    { name: "Tailwind CSS", icon: Globe, color: "bg-orange-500" },
     { name: "Git", icon: Github, color: "bg-gray-700" }
   ];
 
@@ -22,33 +22,33 @@ const Index = () => {
     {
       id: 1,
       title: "E-Commerce Platform",
-      description: "Full-stack e-commerce website with React and Django backend",
-      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop",
-      tech: ["React", "Django", "MongoDB", "Stripe"],
+      description: "A full-stack e-commerce website built with Django, featuring user authentication and payment integration",
+      image: "/ecomapp1.png",
+      tech: ["Django", "SQLite", "Stripe", "Python", "HTML", "CSS", "JavaScript"],
       featured: true
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+      title: "Note App",
+      description: "A full-stack note-taking application featuring JWT-based authentication and CRUD operations",
+      image: "/noteapp1.png",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT"],
       featured: true
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Real-time weather tracking dashboard with beautiful UI",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-      tech: ["JavaScript", "API Integration", "CSS3"],
+      title: "Movie Search App",
+      description: "Real-time movie search app with smart debouncing and trending tracking via Appwrite",
+      image: "/movieapp1.png",
+      tech: ["React.js", "Appwrite", "Tailwind CSS", "Debounce", "TMDb API"],
       featured: false
     }
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/your-profile", color: "text-blue-600" },
-    { name: "GitHub", icon: Github, url: "https://github.com/your-username", color: "text-gray-800" },
-    { name: "Instagram", icon: Instagram, url: "https://instagram.com/your-username", color: "text-pink-600" }
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/dulanjaya-hapuarachchi-1205a4153", color: "text-blue-600" },
+    { name: "GitHub", icon: Github, url: "https://github.com/dulanjaya96", color: "text-gray-800" },
+    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/dulanjaya_", color: "text-pink-600" }
   ];
 
   return (
@@ -59,6 +59,14 @@ const Index = () => {
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-primary">Portfolio</h1>
             <div className="flex space-x-6">
+              <a
+                href="/Dulanjaya_CV_SoftwareEngineer.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                My Resume
+              </a>
               <a href="#home" className="hover:text-primary transition-colors">Home</a>
               <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
               <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
@@ -213,13 +221,16 @@ const Index = () => {
                   </p>
                   <Button 
                     size="lg"
-                    onClick={() => window.location.href = 'mailto:john.doe@example.com?subject=Hello&body=Hi John, I would like to discuss...'}
+                    onClick={() => window.location.href = 'mailto:nc.dulanjaya@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Dulanjaya%2C%0A%0AI%27d%20like%20to%20discuss...%0A%0ARegards%2C%0A'}
                   >
                     <Mail className="mr-2 h-5 w-5" />
                     Send Email
                   </Button>
                   <p className="text-sm text-muted-foreground mt-4">
-                    john.doe@example.com
+                    <a href="mailto:nc.dulanjaya@gmail.com" className="underline">nc.dulanjaya@gmail.com</a>
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    <a href="tel:+94718798719" className="underline">WhatsApp | Mobile +94718798719</a>
                   </p>
                 </div>
               </CardContent>
@@ -232,7 +243,7 @@ const Index = () => {
       <footer className="py-8 border-t">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground mb-4">
-            © 2024 John Doe. All rights reserved.
+            © 2025 Dulanjaya Hapuarachchi. All rights reserved.
           </p>
           <div className="flex gap-4 justify-center">
             {socialLinks.map((social) => (

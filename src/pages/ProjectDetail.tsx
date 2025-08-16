@@ -12,99 +12,96 @@ const ProjectDetail = () => {
   const projects = {
     "1": {
       title: "E-Commerce Platform",
-      description: "A full-stack e-commerce website built with React and Django, featuring user authentication, product catalog, shopping cart, and payment integration.",
-      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=800&h=400&fit=crop",
-      tech: ["React", "Django", "MongoDB", "Stripe", "Redux", "Python"],
-      demoUrl: "https://demo-ecommerce.com",
-      githubUrl: "https://github.com/your-username/ecommerce-platform",
-      completedDate: "March 2024",
-      duration: "3 months",
+      description: "A full-stack e-commerce website built with Django, featuring user authentication, product catalog, shopping cart, and payment integration.",
+      image: "/ecomapp1.png",
+      tech: ["Django", "SQLite", "Stripe", "Python", "PostgreSQL"],
+      demoUrl: "https://github.com/dulanjaya96/Django-ecom",
+      githubUrl: "https://github.com/dulanjaya96/Django-ecom",
+      completedDate: "March 2023",
+      duration: "1 year",
       features: [
-        "User authentication and authorization",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Admin dashboard for product management",
-        "Responsive design for all devices",
-        "Real-time inventory tracking",
-        "Order history and tracking"
+        "User authentication with django-allauth and",
+        "Product catalog with browsing, coupons, and refund requests",
+        "Shopping cart and checkout with address management",
+        "Payment integration using Stripe SDK",
+        "Two-Factor Authentication (2FA) with django-two-factor-auth",        
       ],
       challenges: [
-        "Implementing secure payment processing",
-        "Optimizing database queries for large product catalogs",
-        "Creating responsive design for mobile devices",
-        "Integrating third-party APIs"
+        "Implementing secure two-factor authentication flow",
+        "Integrating Stripe payments with server-side validation",
+        "Managing coupon, refund, and order workflows in Django",        
       ],
       learnings: [
-        "Advanced React patterns and state management",
-        "Django REST framework for API development",
-        "Payment gateway integration",
-        "Database optimization techniques"
+        "Django authentication customization and allauth integration",
+        "Secure payment gateway integration using Stripe",
+        "Working with Django admin enhancements and filtering",
+        "Best practices for production deployment of Django apps"
       ]
+
     },
     "2": {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, built using React and Node.js with Socket.io for real-time communication.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=400&fit=crop",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "JWT"],
-      demoUrl: "https://demo-taskmanager.com",
-      githubUrl: "https://github.com/your-username/task-manager",
-      completedDate: "February 2024",
-      duration: "2 months",
+      title: "Note App",
+      description: "A personal note-taking application with user authentication and CRUD operations, built using the MERN stack (MongoDB, Express.js, React, Node.js) with JWT authentication and rate limiting.",
+      image: "/noteapp1.png",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "Redis", "Postman"],
+      demoUrl: "https://mern-note-app-utkv.onrender.com/",
+      githubUrl: "https://github.com/dulanjaya96/mern-note-app",
+      completedDate: "july 2025",
+      duration: "2 weeks",
       features: [
-        "Real-time collaborative editing",
-        "Task assignment and tracking",
-        "Team management and permissions",
-        "File attachment support",
-        "Notification system",
-        "Progress tracking and analytics",
-        "Mobile-responsive interface",
-        "Dark/light theme toggle"
-      ],
-      challenges: [
-        "Implementing real-time synchronization",
-        "Managing complex state across multiple users",
-        "Ensuring data consistency",
-        "Optimizing performance for large teams"
-      ],
-      learnings: [
-        "WebSocket programming with Socket.io",
-        "Real-time application architecture",
-        "Advanced state management",
-        "Performance optimization techniques"
-      ]
+        "User authentication and authorization with JWT",
+        "User registration and login system",
+        "Personal note creation, editing, and deletion",        
+        "API rate limiting with Redis middleware",
+        "Responsive design with Tailwind CSS and DaisyUI",
+        "Dark/light theme toggle with persistence",              
+        ],
+        challenges: [
+        "Implementing secure JWT authentication flow",
+        "Managing user sessions and token ",        
+        "Handling authentication state across components",     
+        "Deploying with environment variables on Render.com",        
+        ],
+        learnings: [
+        "RESTful API testing and debugging with Postman", 
+        "Full-stack MERN development workflow",
+        "JWT authentication and middleware implementation",
+        "MongoDB user relationships and data modeling",
+        "React state management",
+        "API security with rate limiting and CORS",
+        "Environment variable management in production",
+        "Responsive design with modern CSS frameworks",        
+        "Client-server communication with Axios interceptors"
+]
     },
     "3": {
-      title: "Weather Dashboard",
-      description: "A beautiful weather tracking dashboard that provides real-time weather information with interactive charts and forecasts.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop",
-      tech: ["JavaScript", "API Integration", "CSS3", "Chart.js", "HTML5"],
-      demoUrl: "https://demo-weather.com",
-      githubUrl: "https://github.com/your-username/weather-dashboard",
-      completedDate: "January 2024",
+      title: "Movie Search App",
+      description: "A sleek movie search app that delivers real-time results from TMDb with smart debouncing and trending insights powered by Appwrite",
+      image: "/movieapp1.png",
+      tech: ["React.js", "API Integration", "Appwrite", "Tailwind CSS", "Debounce", "TMDb API"],
+      demoUrl: "https://github.com/dulanjaya96/React.js-movie-web-application",
+      githubUrl: "https://github.com/dulanjaya96/React.js-movie-web-application",
+      completedDate: "march 2025",
       duration: "1 month",
       features: [
-        "Current weather conditions",
-        "5-day weather forecast",
-        "Interactive weather charts",
-        "Location search and geolocation",
-        "Weather alerts and notifications",
-        "Historical weather data",
-        "Beautiful animations and transitions",
-        "Responsive design"
-      ],
-      challenges: [
-        "Working with multiple weather APIs",
-        "Creating smooth animations",
-        "Handling geolocation permissions",
-        "Optimizing API calls"
-      ],
-      learnings: [
-        "API integration best practices",
-        "Advanced CSS animations",
-        "Chart.js for data visualization",
-        "Browser geolocation API"
-      ]
+        "Real-time movie search from TMDb API",
+        "Debounce for optimized search",
+        "Trending movies list using Appwrite",
+        "Detailed movie posters and titles",
+        "Responsive and clean UI with Tailwind CSS",
+        "Error handling and loading indicators"
+        ],
+        challenges: [
+        "Optimizing API calls with debounce",
+        "Integrating and querying Appwrite database",
+        "Handling inconsistent API responses",        
+        ],
+        learnings: [
+        "Efficient API request optimization",
+        "Working with Appwrite for backend services",
+        "Practical use of debounce in React",
+        "Tailwind CSS for fast UI development"
+]
     }
   };
 
