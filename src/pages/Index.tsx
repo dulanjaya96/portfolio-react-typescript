@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Github, Linkedin, Instagram, ExternalLink, Code, Database, Globe, Server, Cpu } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Mail, Github, Linkedin, Instagram, ExternalLink, Code, Database, Globe, Server, Cpu, Menu, X } from "lucide-react";
+// import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Index = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const skills = [
     { name: "Python", icon: Code, color: "bg-blue-500" },
@@ -51,6 +53,23 @@ const Index = () => {
     { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/dulanjaya_", color: "text-pink-600" }
   ];
 
+  const navLinks = [
+    { href: "/Dulanjaya_CV_SoftwareEngineer.pdf", label: "My Resume", isExternal: true },
+    { href: "#home", label: "Home" },
+    { href: "#skills", label: "Skills" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" }
+  ];
+
+  const handleNavClick = (href, isExternal) => {
+    setIsMenuOpen(false);
+    if (isExternal) {
+      window.open(href, '_blank', 'noopener noreferrer');
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -58,23 +77,66 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-primary">Portfolio</h1>
-            <div className="flex space-x-6">
-              <a
-                href="/Dulanjaya_CV_SoftwareEngineer.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
-              >
-                My Resume
-              </a>
-              <a href="#home" className="hover:text-primary transition-colors">Home</a>
-              <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
-              <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.isExternal ? "_blank" : undefined}
+                  rel={link.isExternal ? "noopener noreferrer" : undefined}
+                  className="hover:text-primary transition-colors"
+                  onClick={link.isExternal ? undefined : (e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href, link.isExternal);
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              className="md:hidden p-2 hover:bg-secondary rounded-md transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+
+          {/* Mobile Navigation Menu */}
+          <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}>
+            <div className="py-4 space-y-2 border-t border-border/50 mt-4">
+              {navLinks.map((link) => (
+                <button
+                  key={link.label}
+                  onClick={() => handleNavClick(link.href, link.isExternal)}
+                  className="block w-full text-left px-4 py-3 rounded-md hover:bg-secondary transition-colors"
+                >
+                  {link.label}
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Overlay for mobile menu */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 z-40 md:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-10">
@@ -122,7 +184,6 @@ const Index = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
               </div>
             </div>
           </div>
@@ -188,7 +249,10 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={() => navigate(`/project/${project.id}`)}
+                    onClick={() => {
+                      // For demo purposes - replace with your navigation logic
+                      console.log(`Navigate to project ${project.id}`);
+                    }}
                   >
                     View Details <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
